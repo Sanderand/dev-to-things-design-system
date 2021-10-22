@@ -1,0 +1,39 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 16px 32px;
+  background: #f4f4f4;
+  color: #333333;
+  cursor: pointer;
+  
+  font-size: 14px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+:host(:hover) {
+  background: #e8e8e8;
+}
+
+th-icon {
+  margin-right: 8px;
+}
+
+.underline {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #8492da;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.2s ease-out;
+}
+
+:host([active]) .underline {
+  transform: scaleY(1);
+}

@@ -1,0 +1,7 @@
+:host {
+  display: inline-flex;
+  border-bottom: 1px solid #d6d6d6;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+}

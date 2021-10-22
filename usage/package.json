@@ -1,0 +1,17 @@
+{
+  "name": "usage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync . -f . --cors --no-notify"
+  },
+  "dependencies": {
+    "things": "file:../things"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.5"
+  },
+  "author": "",
+  "license": "ISC"
+}
