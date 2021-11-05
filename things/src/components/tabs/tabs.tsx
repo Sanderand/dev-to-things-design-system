@@ -1,4 +1,5 @@
 import { Component, ComponentInterface, Element, h, Host, JSX, Method } from '@stencil/core';
+import { transformTagName } from '../../util/transform-tag-name';
 
 @Component({
   tag: 'th-tabs',
@@ -11,7 +12,8 @@ export class TabsComponent implements ComponentInterface {
 
   @Method()
   public async setActiveTab(activeTab: HTMLThTabElement): Promise<void> {
-    const tabEls = this.el.querySelectorAll<HTMLThTabElement>('th-tab');
+    const ThTab = transformTagName('th-tab', 'th-tabs', this.el);
+    const tabEls = this.el.querySelectorAll<HTMLThTabElement>(ThTab);
     tabEls.forEach(tabEl => (tabEl.active = activeTab === tabEl));
   }
 

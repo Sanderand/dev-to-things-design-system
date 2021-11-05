@@ -3,7 +3,9 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'things',
   hashFileNames: false,
-  extras: {},
+  extras: {
+    tagNameTransform: true,
+  },
   outputTargets: [
     {
       type: 'dist',

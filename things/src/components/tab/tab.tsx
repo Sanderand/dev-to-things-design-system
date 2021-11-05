@@ -1,4 +1,5 @@
 import { Component, ComponentInterface, Element, h, Host, JSX, Listen, Prop, Watch } from '@stencil/core';
+import { transformTagName } from '../../util/transform-tag-name';
 
 @Component({
   tag: 'th-tab',
@@ -27,7 +28,8 @@ export class TabComponent implements ComponentInterface {
   }
 
   public connectedCallback(): void {
-    this.tabsEl = this.el.closest<HTMLThTabsElement>('th-tabs');
+    const ThTabs = transformTagName('th-tabs', 'th-tab', this.el);
+    this.tabsEl = this.el.closest<HTMLThTabsElement>(ThTabs);
   }
 
   private activateTab(): void {
@@ -44,9 +46,11 @@ export class TabComponent implements ComponentInterface {
   }
 
   public render(): JSX.Element {
+    const ThIcon = transformTagName('th-icon', 'th-tab', this.el);
+
     return (
       <Host tabindex="0" role="tab">
-        <th-icon />
+        <ThIcon class="icon" />
         <slot />
         <div class="underline" />
       </Host>
